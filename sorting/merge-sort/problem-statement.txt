@@ -1,0 +1,29 @@
+Input: Array of N numbers, unsorted
+Egs: [5,4,1,8,7,2,6,3]
+Output: Same N numbers, sorted in icreasing or descending order
+Egs: [1,2,3,4,5,6,7,8]
+
+
+Psuedo Code: 
+  - Merge:
+    C = output [length = n]
+    A = 1st sorted array [n/2]
+    B = 2nd sorted array [n/2]
+    i,j =1
+    for k = 1 to n
+      if A(i) < B(j)
+        C(k) = A(i)
+        i++
+      else B(j) < A(i)
+        C(k) = B(j)
+        j++
+    end
+    // Ignores end cases(i,j reach n/2, in that case copy over rest of the array from the other array), and duplicates
+  
+  - 
+
+Running Time:
+
+Upshot: 4N + 2 (4 ops for every iteration and 2 for initialisation)
+
+Claim: <= 6NLogN + 6N ===> NlogN
